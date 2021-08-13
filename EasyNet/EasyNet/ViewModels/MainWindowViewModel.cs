@@ -15,11 +15,17 @@ namespace EasyNet.ViewModels
     public class MainWindowViewModel
     {
         public ICommand PcClick { get; set; }
+        public ICommand RouterClick { get; set; }
+        public ICommand SwitchClick { get; set; }
 
-        public ImageAwesome _imageAwesome;
+        public ImageAwesome _PcImage;
+        public ImageAwesome _RouterImage;
+        public ImageAwesome _SwitchImage;
         public MainWindowViewModel()
         {
             PcClick = new RelayCommand(PcClickAction);
+            RouterClick = new RelayCommand(RouterClickAction);
+            SwitchClick = new RelayCommand(SwitchClickAction);
         }
 
         private void PcClickAction(object obj)
@@ -27,12 +33,37 @@ namespace EasyNet.ViewModels
             FontAwesome.WPF.ImageAwesome imageAwesome = new ImageAwesome();
             imageAwesome.Icon = FontAwesomeIcon.Desktop;
             imageAwesome.Height = 20;
-            _imageAwesome = imageAwesome;
-            _imageAwesome.MouseLeftButtonDown += Element_MouseLeftButtonDown;
-            _imageAwesome.MouseLeftButtonUp += Element_MouseLeftButtonUp;
-            _imageAwesome.MouseMove += Element_MouseMove;
+            _PcImage = imageAwesome;
+            _PcImage.MouseLeftButtonDown += Element_MouseLeftButtonDown;
+            _PcImage.MouseLeftButtonUp += Element_MouseLeftButtonUp;
+            _PcImage.MouseMove += Element_MouseMove;
 
-            Helper.networkSheet.Children.Add(_imageAwesome);
+            Helper.networkSheet.Children.Add(_PcImage);
+
+        }
+        private void RouterClickAction(object obj)
+        {
+            FontAwesome.WPF.ImageAwesome imageAwesome = new ImageAwesome();
+            imageAwesome.Icon = FontAwesomeIcon.Wifi;
+            imageAwesome.Height = 20;
+            _RouterImage = imageAwesome;
+            _RouterImage.MouseLeftButtonDown += Element_MouseLeftButtonDown;
+            _RouterImage.MouseLeftButtonUp += Element_MouseLeftButtonUp;
+            _RouterImage.MouseMove += Element_MouseMove;
+
+            Helper.networkSheet.Children.Add(_RouterImage);
+        }
+        private void SwitchClickAction(object obj)
+        {
+            FontAwesome.WPF.ImageAwesome imageAwesome = new ImageAwesome();
+            imageAwesome.Icon = FontAwesomeIcon.ObjectGroup;
+            imageAwesome.Height = 20;
+            _SwitchImage = imageAwesome;
+            _SwitchImage.MouseLeftButtonDown += Element_MouseLeftButtonDown;
+            _SwitchImage.MouseLeftButtonUp += Element_MouseLeftButtonUp;
+            _SwitchImage.MouseMove += Element_MouseMove;
+
+            Helper.networkSheet.Children.Add(_SwitchImage);
         }
 
         private Point clickPosition;
