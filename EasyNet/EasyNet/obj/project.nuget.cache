@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "fDA36xalGWlv1EbGl0fjbbXZyhOoKQ0uJKKjIebcH4QsJ1V/K4z/VnclceMNWeTv2jncxl0iz7GfUgtU+rIOoA==",
+  "dgSpecHash": "N5sy8NAeMbeq2YPvVatkMYUFkrfyKTDmXqpUqPectmfrAvPTVX1ywVQtCLOgaEvMTCfFNm3hRQZ3mN+tgTf0Jw==",
   "success": true,
   "projectFilePath": "G:\\Workspace\\VS\\EasyNet\\EasyNet\\EasyNet\\EasyNet.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Team OS\\.nuget\\packages\\fontawesome\\4.7.0\\fontawesome.4.7.0.nupkg.sha512",
-    "C:\\Users\\Team OS\\.nuget\\packages\\fontawesome.wpf\\4.7.0.9\\fontawesome.wpf.4.7.0.9.nupkg.sha512"
+    "C:\\Users\\Team OS\\.nuget\\packages\\fontawesome.wpf\\4.7.0.9\\fontawesome.wpf.4.7.0.9.nupkg.sha512",
+    "C:\\Users\\Team OS\\.nuget\\packages\\system.windows.interactivity.wpf\\2.0.20525\\system.windows.interactivity.wpf.2.0.20525.nupkg.sha512"
   ],
   "logs": [
     {
@@ -14,6 +15,16 @@
       "warningLevel": 1,
       "message": "Package 'FontAwesome.WPF 4.7.0.9' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net5.0-windows7.0'. This package may not be fully compatible with your project.",
       "libraryId": "FontAwesome.WPF",
+      "targetGraphs": [
+        "net5.0-windows7.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'System.Windows.Interactivity.WPF 2.0.20525' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net5.0-windows7.0'. This package may not be fully compatible with your project.",
+      "libraryId": "System.Windows.Interactivity.WPF",
       "targetGraphs": [
         "net5.0-windows7.0"
       ]

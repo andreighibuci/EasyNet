@@ -22,3 +22,5 @@ G:\Workspace\VS\EasyNet\EasyNet\EasyNet\obj\Debug\net5.0-windows\EasyNet.pdb
 G:\Workspace\VS\EasyNet\EasyNet\EasyNet\obj\Debug\net5.0-windows\EasyNet.genruntimeconfig.cache
 G:\Workspace\VS\EasyNet\EasyNet\EasyNet\bin\Debug\net5.0-windows\FontAwesome.WPF.dll
 G:\Workspace\VS\EasyNet\EasyNet\EasyNet\obj\Debug\net5.0-windows\EasyNet.csproj.CopyComplete
+G:\Workspace\VS\EasyNet\EasyNet\EasyNet\bin\Debug\net5.0-windows\Microsoft.Expression.Interactions.dll
+G:\Workspace\VS\EasyNet\EasyNet\EasyNet\bin\Debug\net5.0-windows\System.Windows.Interactivity.dll

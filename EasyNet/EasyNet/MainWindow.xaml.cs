@@ -1,4 +1,6 @@
-﻿using System;
+﻿using EasyNet.Core;
+using EasyNet.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +22,15 @@ namespace EasyNet
     /// </summary>
     public partial class MainWindow : Window
     {
+        private readonly MainWindowViewModel _mainwindowVM;
         public MainWindow()
         {
             InitializeComponent();
+            _mainwindowVM = new MainWindowViewModel();
+            Helper.networkSheet = this.sheetNetwork;
+
+            DataContext = _mainwindowVM;
+           
         }
     }
 }
