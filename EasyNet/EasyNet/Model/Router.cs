@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EasyNet.Model
 {
-    class Router
+    public class Router
     {
         int id { get; set; }
         String name { get; set; }

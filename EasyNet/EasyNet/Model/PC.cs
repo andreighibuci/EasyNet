@@ -8,9 +8,9 @@ namespace EasyNet.Model
 {
     public class PC
     {
-        int id { get; set; }
-        String name { get; set; }
-        String IP { get; set; }
-        Port port{ get; set; }
+       public int id { get; set; }
+       public String name { get; set; }
+       public String IP { get; set; }
+       public Port port{ get; set; }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EasyNet.Model
 {
-    class Port
+    public class Port
     {
         int id { get; set; }
         int portNumber { get; set; }

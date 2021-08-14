@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EasyNet.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,5 +11,7 @@ namespace EasyNet.Core
     public static class Helper
     {
         public static Grid networkSheet;
+
+        public static PC calledPc;
     }
 }

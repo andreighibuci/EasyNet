@@ -1,10 +1,10 @@
 ﻿EasyNet
-
+1.0.0.0
 
 winexe
 C#
 .cs
-G:\Workspace\VS\EasyNet\EasyNet\EasyNet\obj\Debug\net5.0-windows\
+G:\Workspace\VS\EasyNet\EasyNet\EasyNet\obj\x64\Debug\net5.0-windows\
 EasyNet
 none
 false
@@ -12,9 +12,9 @@ TRACE;DEBUG;NET;NET5_0;NETCOREAPP
 G:\Workspace\VS\EasyNet\EasyNet\EasyNet\App.xaml
 242459954
 
-13-1960992129
+15-660376521
 19645063796
 MainWindow.xaml;Windows\PCEditWindow.xaml;
 
-True
+False
 

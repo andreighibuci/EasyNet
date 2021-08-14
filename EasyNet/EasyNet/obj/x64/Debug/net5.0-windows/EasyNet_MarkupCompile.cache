@@ -4,7 +4,7 @@
 winexe
 C#
 .cs
-G:\Workspace\VS\EasyNet\EasyNet\EasyNet\obj\Debug\net5.0-windows\
+G:\Workspace\VS\EasyNet\EasyNet\EasyNet\obj\x64\Debug\net5.0-windows\
 EasyNet
 none
 false
@@ -16,5 +16,5 @@ G:\Workspace\VS\EasyNet\EasyNet\EasyNet\App.xaml
 19645063796
 MainWindow.xaml;Windows\PCEditWindow.xaml;
 
-True
+False
 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EasyNet.Model
 {
-    class Switch
+    public class Switch
     {
     }
 }
