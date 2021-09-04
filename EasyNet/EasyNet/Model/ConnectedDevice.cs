@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace EasyNet.Model
 {
-    class ConnectedDevice
+   public class ConnectedDevice
     {
         int id { get; set; }
-        PC pc { get; set; }
-        Router router { get; set; }
-        Switch switcher { get; set; }
+      public  PC pc { get; set; }
+        public Router router { get; set; }
+       public Switch switcher { get; set; }
     }
 }

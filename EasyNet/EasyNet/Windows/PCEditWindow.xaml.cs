@@ -32,6 +32,24 @@ namespace EasyNet.Windows
             {
                 IPTB.Text = Helper.calledPc.IP;
             }
+
+            if (Helper.calledPc.Gateway != null)
+            {
+                GatewayTB.Text = Helper.calledPc.Gateway;
+            }
+
+            if (Helper.calledPc.port!= null)
+            {
+                if (Helper.calledPc.port.connections.pc != null)
+                    PortTB.Text = Helper.calledPc.port.connections.pc.name;
+
+                if (Helper.calledPc.port.connections.router != null)
+                    PortTB.Text = Helper.calledPc.port.connections.router.name;
+               
+                if (Helper.calledPc.port.connections.switcher != null)
+                    PortTB.Text = Helper.calledPc.port.connections.switcher.name;
+
+            }
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -43,6 +61,7 @@ namespace EasyNet.Windows
         {
             Helper.calledPc.name = NameTB.Text;
             Helper.calledPc.IP = IPTB.Text;
+            Helper.calledPc.Gateway = GatewayTB.Text;
             this.Close();
         }
     }

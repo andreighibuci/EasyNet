@@ -8,5 +8,8 @@ namespace EasyNet.Model
 {
     public class Switch
     {
+        public int id { get; set; }
+
+        public string name { get; set; }
     }
 }

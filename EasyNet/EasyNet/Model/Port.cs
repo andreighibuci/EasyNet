@@ -9,7 +9,6 @@ namespace EasyNet.Model
     public class Port
     {
         int id { get; set; }
-        int portNumber { get; set; }
-        ConnectedDevice connections { get; set; }
+       public ConnectedDevice connections { get; set; }
     }
 }

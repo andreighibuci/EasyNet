@@ -1,11 +1,11 @@
-﻿<Window x:Class="EasyNet.Windows.PCEditWindow"
+﻿<Window x:Class="EasyNet.Windows.RouterEdit"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EasyNet.Windows"
         mc:Ignorable="d"
-        Title="PCEditWindow" Height="450" Width="240">
+        Title="RouterEdit" Height="450" Width="240">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
@@ -32,12 +32,21 @@
 
             <Label Content="IP:" Margin="0,0,10,0" Grid.Column="0" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
             <TextBox x:Name="IPTB" Width="100" Height="20" Margin="0,0,10,0" Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Left"></TextBox>
-           
-            <Label Content="Gateway:" Margin="0,0,10,0" Grid.Column="0" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
-            <TextBox x:Name="GatewayTB" Width="100" Height="20" Margin="0,0,10,0" Grid.Column="1" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Left"></TextBox>
+
+            <Label Content="Range IP Ports:" Margin="0,0,10,0" Grid.Column="0" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
+            <TextBox x:Name="RangeIPTB" Width="100" Height="20" Margin="0,0,10,0" Grid.Column="1" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Left"></TextBox>
 
             <Label Content="Port:" Margin="0,0,10,0" Grid.Column="0" Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
-            <TextBox x:Name="PortTB" Width="100" Height="20" Margin="0,0,10,0" Grid.Column="1" Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Left"></TextBox>
+            <TextBox x:Name="Port4TB" Width="100" Height="20" Margin="0,0,10,0" Grid.Column="1" Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Left"></TextBox>
+
+            <Label Content="Port:" Margin="0,0,10,0" Grid.Column="0" Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
+            <TextBox x:Name="PortTB" Width="100" Height="20" Margin="0,0,10,0" Grid.Column="1" Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Left"></TextBox>
+
+            <Label Content="Port:" Margin="0,0,10,0" Grid.Column="0" Grid.Row="5" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
+            <TextBox x:Name="Port2TB" Width="100" Height="20" Margin="0,0,10,0" Grid.Column="1" Grid.Row="5" VerticalAlignment="Center" HorizontalAlignment="Left"></TextBox>
+
+            <Label Content="Port:" Margin="0,0,10,0" Grid.Column="0" Grid.Row="6" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
+            <TextBox x:Name="Port3TB" Width="100" Height="20" Margin="0,0,10,0" Grid.Column="1" Grid.Row="6" VerticalAlignment="Center" HorizontalAlignment="Left"></TextBox>
 
             <Grid Grid.Row="7" Grid.Column="1">
                 <Grid.ColumnDefinitions>

@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "G:\\Workspace\\VS\\EasyNet\\EasyNet\\EasyNet\\EasyNet.csproj": {}
+    "D:\\Work\\VS\\EasyNet\\EasyNet\\EasyNet\\EasyNet\\EasyNet.csproj": {}
   },
   "projects": {
-    "G:\\Workspace\\VS\\EasyNet\\EasyNet\\EasyNet\\EasyNet.csproj": {
+    "D:\\Work\\VS\\EasyNet\\EasyNet\\EasyNet\\EasyNet\\EasyNet.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\Workspace\\VS\\EasyNet\\EasyNet\\EasyNet\\EasyNet.csproj",
+        "projectUniqueName": "D:\\Work\\VS\\EasyNet\\EasyNet\\EasyNet\\EasyNet\\EasyNet.csproj",
         "projectName": "EasyNet",
-        "projectPath": "G:\\Workspace\\VS\\EasyNet\\EasyNet\\EasyNet\\EasyNet.csproj",
-        "packagesPath": "C:\\Users\\Team OS\\.nuget\\packages\\",
-        "outputPath": "G:\\Workspace\\VS\\EasyNet\\EasyNet\\EasyNet\\obj\\",
+        "projectPath": "D:\\Work\\VS\\EasyNet\\EasyNet\\EasyNet\\EasyNet\\EasyNet.csproj",
+        "packagesPath": "C:\\Users\\Andre\\.nuget\\packages\\",
+        "outputPath": "D:\\Work\\VS\\EasyNet\\EasyNet\\EasyNet\\EasyNet\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Team OS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Andre\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

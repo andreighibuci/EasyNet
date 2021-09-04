@@ -11,6 +11,7 @@ namespace EasyNet.Model
        public int id { get; set; }
        public String name { get; set; }
        public String IP { get; set; }
+       public String Gateway { get; set; }
        public Port port{ get; set; }
     }
 }

@@ -67,10 +67,16 @@ namespace EasyNet.ViewModels
             imageAwesome.Height = 20;
             imageAwesome.Name = "elem"+id.ToString();
 
+
+            Router router = new Router();
+            router.id = id;
+            routerList.Add(router);
+
             _RouterImage = imageAwesome;
             _RouterImage.MouseLeftButtonDown += Element_MouseLeftButtonDown;
             _RouterImage.MouseLeftButtonUp += Element_MouseLeftButtonUp;
             _RouterImage.MouseMove += Element_MouseMove;
+            _RouterImage.MouseLeftButtonDown += RouterElement_DoubleClick;
 
             Helper.networkSheet.Children.Add(_RouterImage);
             id++;
@@ -94,27 +100,78 @@ namespace EasyNet.ViewModels
 
         private Point clickPosition;
         private Line line = new Line();
+
+        private PC retainPC;
+        private Router retainRouter;
+        private Switch retainSwitch;
         private void Element_RightMouseDown(object sender, MouseButtonEventArgs e)
         {
-            line = new Line();
-            line.Visibility = System.Windows.Visibility.Visible;
-            line.StrokeThickness = 4;
-            line.Stroke = System.Windows.Media.Brushes.Black;
-            Point currentPosition = e.GetPosition(Helper.networkSheet as UIElement);
 
-            line.X1 = currentPosition.X;
-            line.Y1 = currentPosition.Y;
+            if(Helper.checkIfPCType((sender as ImageAwesome).Name, pcList))
+            {
+                foreach (PC pc in pcList)
+                {
+                    if ((sender as ImageAwesome).Name.Contains(pc.id.ToString()))
+                    {
+                        if (pc.port == null)
+                        {
+                            pc.port = new Port();
+                            pc.port.connections = new ConnectedDevice();
+                            retainPC = pc;
+                            line = new Line();
+                            line.Visibility = System.Windows.Visibility.Visible;
+                            line.StrokeThickness = 4;
+                            line.Stroke = System.Windows.Media.Brushes.Black;
+                            Point currentPosition = e.GetPosition(Helper.networkSheet as UIElement);
+
+                            line.X1 = currentPosition.X;
+                            line.Y1 = currentPosition.Y;
+                        }
+                        else { MessageBox.Show("The PC " + pc.name + " has all the ports occupied"); }
+                        
+
+                    }
+                }
+            }
+            else
+            {
+
+            }
+          
 
         }
 
         private void Element_RightMouseUp(object sender, MouseButtonEventArgs e)
         {       
             Point currentPosition = e.GetPosition(Helper.networkSheet as UIElement);
+            if (Helper.checkIfPCType((sender as ImageAwesome).Name, pcList))
+            {
+                foreach (PC pc in pcList)
+                {
+                    if ((sender as ImageAwesome).Name.Contains(pc.id.ToString()))
+                    {
+                        if (pc.port == null)
+                        {
+                            pc.port = new Port();
+                            pc.port.connections = new ConnectedDevice();
+                            retainPC.port.connections.pc = pc;
+                            pc.port.connections.pc = retainPC;
+                            line.X2 = currentPosition.X;
+                            line.Y2 = currentPosition.Y;
 
-            line.X2 = currentPosition.X;
-            line.Y2 = currentPosition.Y;
+                            Helper.networkSheet.Children.Add(line);
 
-            Helper.networkSheet.Children.Add(line);
+                        }
+                        else {
+                            retainPC.port = null;
+                            MessageBox.Show("The PC " + pc.name + " has all the ports occupied"); }
+
+
+                    }
+                }
+            }
+
+           
 
         }
         private void PCElement_DoubleClick(object sender, MouseButtonEventArgs e)
@@ -128,6 +185,22 @@ namespace EasyNet.ViewModels
                         Helper.calledPc = pc;
                         PCEditWindow pcedit = new PCEditWindow();
                         pcedit.Show();
+                    }
+                }
+            }
+        }
+
+        private void RouterElement_DoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ClickCount == 2)
+            {
+                foreach (Router router in routerList)
+                {
+                    if ((sender as ImageAwesome).Name.Contains(router.id.ToString()))
+                    {
+                        Helper.calledRouter = router;
+                        RouterEdit routeredit = new RouterEdit();
+                        routeredit.Show();
                     }
                 }
             }

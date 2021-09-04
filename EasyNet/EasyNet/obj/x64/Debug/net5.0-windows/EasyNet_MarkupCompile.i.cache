@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-G:\Workspace\VS\EasyNet\EasyNet\EasyNet\obj\x64\Debug\net5.0-windows\
+D:\Work\VS\EasyNet\EasyNet\EasyNet\EasyNet\obj\x64\Debug\net5.0-windows\
 EasyNet
 none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
-G:\Workspace\VS\EasyNet\EasyNet\EasyNet\App.xaml
-242459954
+D:\Work\VS\EasyNet\EasyNet\EasyNet\EasyNet\App.xaml
+3455578985
 
-15-660376521
-19645063796
-MainWindow.xaml;Windows\PCEditWindow.xaml;
+16-102223065
+196-364340549
+MainWindow.xaml;Windows\PCEditWindow.xaml;Windows\RouterEdit.xaml;
 
-False
+True
 
