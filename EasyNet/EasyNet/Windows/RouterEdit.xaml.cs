@@ -38,6 +38,26 @@ namespace EasyNet.Windows
             {
                 RangeIPTB.Text = Helper.calledRouter.RangeIp;
             }
+
+            if(Helper.calledRouter.ports[0].connections != null)
+            {
+                Port4TB.Text = Helper.calledRouter.ports[0].connections.pc.name;
+            }
+
+            if (Helper.calledRouter.ports[1].connections != null)
+            {
+                PortTB.Text = Helper.calledRouter.ports[1].connections.pc.name;
+            }
+
+            if (Helper.calledRouter.ports[2].connections != null)
+            {
+                Port2TB.Text = Helper.calledRouter.ports[2].connections.pc.name;
+            }
+
+            if (Helper.calledRouter.ports[3].connections != null)
+            {
+                Port3TB.Text = Helper.calledRouter.ports[3].connections.pc.name;
+            }
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)

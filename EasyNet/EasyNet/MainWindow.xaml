@@ -107,7 +107,22 @@
                     <fa:ImageAwesome Icon="ObjectGroup" Grid.Row="2" Height="20"/>
                 </Grid>
             </Grid>
-           
+            <Grid Grid.Row="3">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button Grid.Column="0" Background="Green" Margin="5,5,5,5">Validate</Button>
+                    <Button Grid.Column="1" Background="Red" Margin="5,5,5,5" Command="{Binding DeleteClick}">Delete</Button>
+                </Grid>
+            </Grid>
         </Grid>
 
         <Grid x:Name="sheetNetwork" Grid.Column="1">

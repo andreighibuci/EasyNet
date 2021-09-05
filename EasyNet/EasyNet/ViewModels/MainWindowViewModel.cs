@@ -23,6 +23,7 @@ namespace EasyNet.ViewModels
         public ICommand PcClick { get; set; }
         public ICommand RouterClick { get; set; }
         public ICommand SwitchClick { get; set; }
+        public ICommand DeleteClick { get; set; }
 
 
 
@@ -34,9 +35,18 @@ namespace EasyNet.ViewModels
             PcClick = new RelayCommand(PcClickAction);
             RouterClick = new RelayCommand(RouterClickAction);
             SwitchClick = new RelayCommand(SwitchClickAction);
+            DeleteClick = new RelayCommand(DeleteClickAction);
         }
 
-
+        private void DeleteClickAction(object obj)
+        {
+            Helper.networkSheet.Children.Clear();
+            id = 1;
+            pcList = new List<PC>();
+            routerList = new List<Router>();
+            switchList = new List<Switch>();
+        }
+    
 
         private void PcClickAction(object obj)
         {
@@ -69,6 +79,7 @@ namespace EasyNet.ViewModels
 
 
             Router router = new Router();
+            router.ports = new List<Port>() { new Port(), new Port(), new Port(), new Port() };
             router.id = id;
             routerList.Add(router);
 
@@ -77,7 +88,8 @@ namespace EasyNet.ViewModels
             _RouterImage.MouseLeftButtonUp += Element_MouseLeftButtonUp;
             _RouterImage.MouseMove += Element_MouseMove;
             _RouterImage.MouseLeftButtonDown += RouterElement_DoubleClick;
-
+            _RouterImage.MouseRightButtonDown += Element_RightMouseDown;
+            _RouterImage.MouseRightButtonUp += Element_RightMouseUp;
             Helper.networkSheet.Children.Add(_RouterImage);
             id++;
         }
@@ -107,7 +119,7 @@ namespace EasyNet.ViewModels
         private void Element_RightMouseDown(object sender, MouseButtonEventArgs e)
         {
 
-            if(Helper.checkIfPCType((sender as ImageAwesome).Name, pcList))
+            if (Helper.checkIfPCType((sender as ImageAwesome).Name, pcList))
             {
                 foreach (PC pc in pcList)
                 {
@@ -128,17 +140,12 @@ namespace EasyNet.ViewModels
                             line.Y1 = currentPosition.Y;
                         }
                         else { MessageBox.Show("The PC " + pc.name + " has all the ports occupied"); }
-                        
+
 
                     }
                 }
             }
-            else
-            {
-
-            }
-          
-
+           
         }
 
         private void Element_RightMouseUp(object sender, MouseButtonEventArgs e)
@@ -165,6 +172,44 @@ namespace EasyNet.ViewModels
                         else {
                             retainPC.port = null;
                             MessageBox.Show("The PC " + pc.name + " has all the ports occupied"); }
+
+
+                    }
+                }
+            }else if(Helper.checkIfRouterType((sender as ImageAwesome).Name, routerList))
+            {
+                foreach (Router router in routerList)
+                {
+                    if ((sender as ImageAwesome).Name.Contains(router.id.ToString()))
+                    {
+                        bool allportsOccupied = true;
+                       for(int i = 0; i < 4;i++)
+                        {
+                            if (router.ports[i].connections == null)
+                            {
+                                allportsOccupied = false;
+                                router.ports[i] = new Port();
+                                router.ports[i].connections = new ConnectedDevice();
+                                retainPC.port.connections.router = router;
+                                router.ports[i].connections.pc = retainPC;
+                                line.X2 = currentPosition.X;
+                                line.Y2 = currentPosition.Y;
+                               
+                                Helper.networkSheet.Children.Remove(line);
+                                Helper.networkSheet.Children.Add(line);
+                                break;
+
+                            }
+                           
+                        }
+
+                        if (allportsOccupied)
+                        {
+                         
+                                retainPC.port = null;
+                                MessageBox.Show("The router " + router.name + " has all the ports occupied");
+                            
+                        }
 
 
                     }
