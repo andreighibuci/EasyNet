@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
 D:\Work\VS\EasyNet\EasyNet\EasyNet\EasyNet\App.xaml
-3455578985
+41110214845
 
-14-1402838673
+15-1571619076
 196-364340549
-MainWindow.xaml;Windows\PCEditWindow.xaml;Windows\RouterEdit.xaml;
+MainWindow.xaml;Windows\PCEditWindow.xaml;Windows\RouterEdit.xaml;Windows\SwitchEdit.xaml;
 
 False
 

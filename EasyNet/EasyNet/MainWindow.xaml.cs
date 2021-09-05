@@ -28,6 +28,7 @@ namespace EasyNet
             InitializeComponent();
             _mainwindowVM = new MainWindowViewModel();
             Helper.networkSheet = this.sheetNetwork;
+            Helper.validationContent = this.ValidationContent;
 
             DataContext = _mainwindowVM;
            

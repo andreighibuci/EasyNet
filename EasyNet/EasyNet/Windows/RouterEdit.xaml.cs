@@ -41,22 +41,35 @@ namespace EasyNet.Windows
 
             if(Helper.calledRouter.ports[0].connections != null)
             {
-                Port4TB.Text = Helper.calledRouter.ports[0].connections.pc.name;
+                if (Helper.calledRouter.ports[0].connections.pc != null)
+                    Port4TB.Text = Helper.calledRouter.ports[0].connections.pc.name;
+                else if (Helper.calledRouter.ports[0].connections.switcher != null)
+                    Port4TB.Text = Helper.calledRouter.ports[0].connections.switcher.name;
+               
             }
 
             if (Helper.calledRouter.ports[1].connections != null)
             {
-                PortTB.Text = Helper.calledRouter.ports[1].connections.pc.name;
+                if (Helper.calledRouter.ports[1].connections.pc != null)
+                    PortTB.Text = Helper.calledRouter.ports[1].connections.pc.name;
+                else if (Helper.calledRouter.ports[1].connections.switcher != null)
+                    PortTB.Text = Helper.calledRouter.ports[1].connections.switcher.name;
             }
 
             if (Helper.calledRouter.ports[2].connections != null)
             {
-                Port2TB.Text = Helper.calledRouter.ports[2].connections.pc.name;
+                if (Helper.calledRouter.ports[2].connections.pc != null)
+                    Port2TB.Text = Helper.calledRouter.ports[2].connections.pc.name;
+                else if (Helper.calledRouter.ports[2].connections.switcher != null)
+                    Port2TB.Text = Helper.calledRouter.ports[2].connections.switcher.name;
             }
 
             if (Helper.calledRouter.ports[3].connections != null)
             {
-                Port3TB.Text = Helper.calledRouter.ports[3].connections.pc.name;
+                if (Helper.calledRouter.ports[3].connections.pc != null)
+                    Port3TB.Text = Helper.calledRouter.ports[3].connections.pc.name;
+                else if (Helper.calledRouter.ports[3].connections.switcher != null)
+                    Port3TB.Text = Helper.calledRouter.ports[3].connections.switcher.name;
             }
         }
 

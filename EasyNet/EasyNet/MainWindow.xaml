@@ -6,14 +6,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EasyNet"
         mc:Ignorable="d"
-        Title="EasyNet" Height="450" Width="800" >
+        Title="EasyNet" Height="470" Width="800" >
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="4*"/>
         </Grid.ColumnDefinitions>
 
-        <Grid Grid.Column="0" Background="#2980b9">
+        <Grid Grid.Column="0" Background="#2980b9" Height="434" VerticalAlignment="Top">
             <Grid.RowDefinitions>
                 <RowDefinition Height="1*"/>
                 <RowDefinition Height="2*"/>
@@ -107,19 +107,19 @@
                     <fa:ImageAwesome Icon="ObjectGroup" Grid.Row="2" Height="20"/>
                 </Grid>
             </Grid>
-            <Grid Grid.Row="3">
+            <Grid Grid.Row="3" Name="ValidationField">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="1*"/>
                     <RowDefinition Height="1*"/>
                     <RowDefinition Height="1*"/>
                 </Grid.RowDefinitions>
-
+                <Label Grid.Row="1" Name="ValidationContent" HorizontalAlignment="Center" VerticalAlignment="Center" />
                 <Grid Grid.Row="2">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="1*"/>
                         <ColumnDefinition Width="1*"/>
                     </Grid.ColumnDefinitions>
-                    <Button Grid.Column="0" Background="Green" Margin="5,5,5,5">Validate</Button>
+                    <Button Grid.Column="0" Background="Green" Margin="5,5,5,5" Command="{Binding ValidateClick}">Validate</Button>
                     <Button Grid.Column="1" Background="Red" Margin="5,5,5,5" Command="{Binding DeleteClick}">Delete</Button>
                 </Grid>
             </Grid>

@@ -60,3 +60,5 @@ D:\Work\VS\EasyNet\EasyNet\EasyNet\EasyNet\obj\x64\Debug\net5.0-windows\EasyNet.
 D:\Work\VS\EasyNet\EasyNet\EasyNet\EasyNet\obj\x64\Debug\net5.0-windows\EasyNet.csproj.CoreCompileInputs.cache
 D:\Work\VS\EasyNet\EasyNet\EasyNet\EasyNet\obj\x64\Debug\net5.0-windows\EasyNet.csproj.CopyComplete
 D:\Work\VS\EasyNet\EasyNet\EasyNet\EasyNet\obj\x64\Debug\net5.0-windows\EasyNet.genruntimeconfig.cache
+D:\Work\VS\EasyNet\EasyNet\EasyNet\EasyNet\obj\x64\Debug\net5.0-windows\Windows\SwitchEdit.g.cs
+D:\Work\VS\EasyNet\EasyNet\EasyNet\EasyNet\obj\x64\Debug\net5.0-windows\Windows\SwitchEdit.baml

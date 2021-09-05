@@ -11,6 +11,7 @@ namespace EasyNet.Core
     public static class Helper
     {
         public static Grid networkSheet;
+        public static Label validationContent;
 
         public static PC calledPc;
         public static Router calledRouter;
