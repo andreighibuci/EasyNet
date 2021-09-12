@@ -74,16 +74,17 @@ namespace EasyNet.ViewModels
 
                             }
 
-                            string finalIp = port.connections.pc.IP.Substring(port.connections.pc.IP.LastIndexOf(".") + 1, 3);
+                            string finalIp =port.connections.pc.IP.Split(".")[port.connections.pc.IP.Split(".").Length - 1];
                             string[] Ranges = router.RangeIp.Split("-");
                             string minRange = Ranges[0];
                             string maxRange = Ranges[1];
 
-                            if (Int32.Parse(finalIp) < Int32.Parse(minRange) || Int32.Parse(finalIp) > Int32.Parse(maxRange))
-                            {
-                                isinRange = false;
-                                pcNotInRages += port.connections.pc.name + " ";
-                            }
+                            if(finalIp != "")
+                                if (Int32.Parse(finalIp) < Int32.Parse(minRange) || Int32.Parse(finalIp) > Int32.Parse(maxRange))
+                                {
+                                    isinRange = false;
+                                    pcNotInRages += port.connections.pc.name + " ";
+                                }
                         }
                     }
 
@@ -116,16 +117,17 @@ namespace EasyNet.ViewModels
 
                                     }
 
-                                    string finalIp = portWithPc.connections.pc.IP.Substring(portWithPc.connections.pc.IP.LastIndexOf(".") + 1, 3);
+                                    string finalIp = portWithPc.connections.pc.IP.Split(".")[portWithPc.connections.pc.IP.Split(".").Length - 1];
                                     string[] Ranges = port.connections.router.RangeIp.Split("-");
                                     string minRange = Ranges[0];
                                     string maxRange = Ranges[1];
 
-                                    if (Int32.Parse(finalIp) < Int32.Parse(minRange) || Int32.Parse(finalIp) > Int32.Parse(maxRange))
-                                    {
-                                        isinRange = false;
-                                        pcNotInRages += portWithPc.connections.pc.name + " ";
-                                    }
+                                    if (finalIp != "")
+                                       if (Int32.Parse(finalIp) < Int32.Parse(minRange) || Int32.Parse(finalIp) > Int32.Parse(maxRange))
+                                        {
+                                            isinRange = false;
+                                            pcNotInRages += portWithPc.connections.pc.name + " ";
+                                         }
                                 }
                             }
                         }
@@ -286,7 +288,7 @@ namespace EasyNet.ViewModels
                     {
                         if (pc.port == null)
                         {
-                            pc.port = new Port();
+                           
                             retainPC = pc;
                             line = new Line();
                             line.Visibility = System.Windows.Visibility.Visible;
@@ -316,7 +318,6 @@ namespace EasyNet.ViewModels
                         if (router.ports[i].connections == null)
                         {
                             allportsOccupied = false;
-                            router.ports[i] = new Port();
                             retainRouter = router;
                             line = new Line();
                             line.Visibility = System.Windows.Visibility.Visible;
@@ -393,16 +394,24 @@ namespace EasyNet.ViewModels
                             pc.port.connections = new ConnectedDevice();
                             if (retainPC != null)
                             {
+                                retainPC.port = new Port();
+                                retainPC.port.connections = new ConnectedDevice();
                                 retainPC.port.connections.pc = pc;
                                 pc.port.connections.pc = retainPC;
                                 line.X2 = currentPosition.X;
                                 line.Y2 = currentPosition.Y;
-                            }else if(retainRouter != null)
+
+                                Helper.networkSheet.Children.Remove(line);
+                                Helper.networkSheet.Children.Add(line);
+                            }
+                            else if(retainRouter != null)
                             {
+                                
                                 foreach (Port port in retainRouter.ports)
                                 {
                                     if (port.connections == null)
                                     {
+                                        
                                         port.connections = new ConnectedDevice();
                                         port.connections.pc = pc;
                                         pc.port = new Port();
@@ -487,7 +496,7 @@ namespace EasyNet.ViewModels
                                 else if (retainPC != null)
                                 {
 
-
+                                    retainPC.port = new Port();
                                     if (retainPC.port.connections == null)
                                     {
                                         retainPC.port.connections = new ConnectedDevice();
@@ -558,9 +567,8 @@ namespace EasyNet.ViewModels
                                     }
                                 }else if(retainPC != null)
                                 {
-                                   
-                                        
-                                            if (retainPC.port.connections == null)
+                                    retainPC.port = new Port();
+                                    if (retainPC.port.connections == null)
                                             {
                                                 retainPC.port.connections = new ConnectedDevice();
                                                 retainPC.port.connections.switcher = switcher;

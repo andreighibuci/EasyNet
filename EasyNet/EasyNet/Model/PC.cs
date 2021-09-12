@@ -13,5 +13,11 @@ namespace EasyNet.Model
        public String IP { get; set; }
        public String Gateway { get; set; }
        public Port port{ get; set; }
+
+        public PC()
+        {
+            this.Gateway = "";
+            this.IP = "";
+        }
     }
 }
